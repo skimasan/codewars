@@ -14,20 +14,27 @@
 //     Be careful when handling cases where x1, x2, y1, or y2 are zero to avoid division by zero errors.
 //     A vector with coordinates (0, 0) is collinear to all vectors.
 
-//SOLUTUION:
-function collinearity(x1, y1, x2, y2) {
-    // Case 1: Both vectors are (0, 0)
-    if (x1 === 0 && y1 === 0 && x2 === 0 && y2 === 0) {
-        return true;
-    }
+//SOLUTUION 1:
+// function collinearity(x1, y1, x2, y2) {
+//     // Case 1: Both vectors are (0, 0)
+//     if (x1 === 0 && y1 === 0 && x2 === 0 && y2 === 0) {
+//         return true;
+//     }
+//
+//     // Case 2: One of the vectors is (0, 0)
+//     if ((x1 === 0 && y1 === 0) || (x2 === 0 && y2 === 0)) {
+//         return true;
+//     }
+//
+//     // Case 3: Avoid division by zero and check collinearity using cross multiplication
+//     return x1 * y2 === y1 * x2;
+// }
 
-    // Case 2: One of the vectors is (0, 0)
-    if ((x1 === 0 && y1 === 0) || (x2 === 0 && y2 === 0)) {
-        return true;
-    }
+//SOLUTION 2:
+function collinearity( x1,y1, x2,y2 ) {
 
-    // Case 3: Avoid division by zero and check collinearity using cross multiplication
-    return x1 * y2 === y1 * x2;
+
+    return x1*y2===y1*x2
 }
 
 console.log(collinearity(1, 2, 2, 4)); // true (on the same line)
