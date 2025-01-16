@@ -5,9 +5,14 @@
 // Input: 145263 Output: 654321
 // Input: 123456789 Output: 987654321
 
-//SOLUTION:
+//SOLUTION#1:
+// function descendingOrder(n){
+//     return parseInt(n.toString().split('').sort((a, b) => b - a).join(''), 10);
+// }
+
+// SOLUTION#2:
 function descendingOrder(n){
-    return parseInt(n.toString().split('').sort((a, b) => b - a).join(''), 10);
+    return parseInt(String(n).split('').sort().reverse().join(''))
 }
 
 console.log(descendingOrder(42145));      // Вывод: 54421
